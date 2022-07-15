@@ -15,21 +15,14 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PointsCalculatorServiceTest {
-
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "src/test/java/resources/results_1.csv")
-
-//    final String inputFilePath = "src/test/java/resources/results_1.csv";
-//    final String splitBy = ";";
-//    @Test
-
+    
     StdConversion stdConversion = Mockito.mock(StdConversion.class);
 
 
@@ -53,17 +46,6 @@ public class PointsCalculatorServiceTest {
         assertThrows(RuntimeException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFile, splitBy));
 
     }
-
-//    @ParameterizedTest
-//    @ValueSource(strings = {"src/test/java/resources/results_1.csv"})
-//    public void processFileToAthleteList_ThrowIOExceptionTest(String inputString) throws IOException {
-//        File inputFile = new File(inputString);
-//        final String splitBy = ";";
-//        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-//        Mockito.when(pointsCalculatorService.processFileToAthleteList(inputFile,splitBy)).thenThrow(IOException.class);
-//        assertThrows(RuntimeException.class,()->pointsCalculatorService.processFileToAthleteList(inputFile, splitBy));
-//
-//    }
 
     @Test
     public void convertFromMetresToCentiMForJumpingSports_WithSingleAthleteTest() {
@@ -236,12 +218,11 @@ public class PointsCalculatorServiceTest {
         File xmlToListFile = new File(resultPath);
         Athletes outputAthletesList = (Athletes) unmarshaller.unmarshal(xmlToListFile);
 
-        for(int i=0;i<inputList.size();i++)
-        {
-            assertEquals(inputList.get(i).getName(),outputAthletesList.getList().get(i).getName());
-            assertEquals(inputList.get(i).getEventPerformance(),outputAthletesList.getList().get(i).getEventPerformance());
-            assertEquals(inputList.get(i).getTotalScore(),outputAthletesList.getList().get(i).getTotalScore());
-            assertEquals(inputList.get(i).getRank(),outputAthletesList.getList().get(i).getRank());
+        for (int i = 0; i < inputList.size(); i++) {
+            assertEquals(inputList.get(i).getName(), outputAthletesList.getList().get(i).getName());
+            assertEquals(inputList.get(i).getEventPerformance(), outputAthletesList.getList().get(i).getEventPerformance());
+            assertEquals(inputList.get(i).getTotalScore(), outputAthletesList.getList().get(i).getTotalScore());
+            assertEquals(inputList.get(i).getRank(), outputAthletesList.getList().get(i).getRank());
         }
 
     }
