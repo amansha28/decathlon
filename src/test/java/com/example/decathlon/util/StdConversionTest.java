@@ -13,8 +13,7 @@ public class StdConversionTest {
     @Test //19800000
     public void getStartConvertedDateInSecs_CorrectTimeStampTest() throws ParseException {
         long expectedTimestamp = 19800000;
-
-        assertEquals(expectedTimestamp,stdConversion.getStartConvertedDateInSecs(),()->"TimeStamp does not matches the expected");
+        assertEquals(expectedTimestamp, stdConversion.getStartConvertedDateInSecs(), () -> "TimeStamp does not matches the expected");
     }
 
 

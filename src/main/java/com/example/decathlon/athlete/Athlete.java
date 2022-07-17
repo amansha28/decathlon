@@ -3,13 +3,12 @@ package com.example.decathlon.athlete;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /*
-* Main Athlete class to store all information related to each athlete like name, performance in each sport, total-score and rank.
-* */
-@XmlRootElement(name="athlete")
+ * Main Athlete class to store all information related to each athlete like name, performance in each sport, total-score and rank.
+ * */
+@XmlRootElement(name = "athlete")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Athlete {
 
