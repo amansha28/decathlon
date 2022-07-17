@@ -1,8 +1,0 @@
-com/example/decathlon/util/PathValidatorTest.class
-com/example/decathlon/util/SplitByValidatorTest.class
-com/example/decathlon/util/ListValidatorTest.class
-com/example/decathlon/service/AthletePointsCalculatorTest.class
-com/example/decathlon/events/EventsTest.class
-com/example/decathlon/util/FileValidatorTest.class
-com/example/decathlon/service/PointsCalculatorServiceTest.class
-com/example/decathlon/util/StdConversionTest.class
