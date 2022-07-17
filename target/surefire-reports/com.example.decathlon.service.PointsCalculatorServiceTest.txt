@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.decathlon.service.PointsCalculatorServiceTest
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.697 s - in com.example.decathlon.service.PointsCalculatorServiceTest

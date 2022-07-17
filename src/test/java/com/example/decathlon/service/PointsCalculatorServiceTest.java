@@ -2,6 +2,11 @@ package com.example.decathlon.service;
 
 import com.example.decathlon.athlete.Athlete;
 import com.example.decathlon.athlete.Athletes;
+import com.example.decathlon.events.Sport;
+import com.example.decathlon.events.utils.Parameters;
+import com.example.decathlon.events.utils.SportsCategory;
+import com.example.decathlon.events.utils.SportsType;
+import com.example.decathlon.events.utils.Units;
 import com.example.decathlon.util.StdConversion;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,8 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -30,7 +37,7 @@ public class PointsCalculatorServiceTest {
         final String splitBy = ";";
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
         PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-        List<Athlete> list = pointsCalculatorService.processFileToAthleteList(inputFile, splitBy);
+        List<Athlete> list = pointsCalculatorService.processFileToAthleteList(inputString, splitBy);
         assertEquals("John Smith", list.get(0).getName());
     }
 
@@ -39,7 +46,7 @@ public class PointsCalculatorServiceTest {
     public void processFileToAthleteList_IncorrectLocationOfFileTest(String inputFilePath) {
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
         PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-        assertThrows(IllegalArgumentException.class, () -> pointsCalculatorService.processFileToAthleteList(new File(inputFilePath), inputFilePath));
+        assertThrows(IllegalArgumentException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFilePath, ";"));
     }
 
     @ParameterizedTest
@@ -47,19 +54,19 @@ public class PointsCalculatorServiceTest {
     public void processFileToAthleteList_IncorrectSplitByStringTest(String inputFilePath) {
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
         PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-        assertThrows(IllegalArgumentException.class, () -> pointsCalculatorService.processFileToAthleteList(new File(inputFilePath), ","));
+        assertThrows(IllegalArgumentException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFilePath, ","));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"src/test/java/resources/results_1.csv"})
-    public void processFileToAthleteList_ThrowParseExceptionTest(String inputString) throws ParseException {
-        File inputFile = new File(inputString);
+    public void processFileToAthleteList_ThrowParseExceptionTest(String inputFilePath) throws ParseException {
+        File inputFile = new File(inputFilePath);
         final String splitBy = ";";
 
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
         PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
         Mockito.when(stdConversion.getStartConvertedDateInSecs()).thenThrow(ParseException.class);
-        assertThrows(RuntimeException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFile, splitBy));
+        assertThrows(RuntimeException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFilePath, splitBy));
     }
 
     @ParameterizedTest
@@ -67,18 +74,26 @@ public class PointsCalculatorServiceTest {
     public void processFileToAthleteList_IncompleteInputFieldsInLineTest(String inputFilePath) {
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
         PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-        assertThrows(RuntimeException.class, () -> pointsCalculatorService.processFileToAthleteList(new File(inputFilePath), ";"));
+        assertThrows(RuntimeException.class, () -> pointsCalculatorService.processFileToAthleteList(inputFilePath, ";"));
     }
 
-    // revisit this to see if we can make it work.
-//    @ParameterizedTest
-//    @ValueSource(strings = {"src/test/java/resources/results_2.csv"})
-//    public void processFileToAthleteList_IOExceptionTest(String inputFilePath) throws IOException {
-//        StdConversion stdConversion = Mockito.mock(StdConversion.class);
-//        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
-//        Mockito.when(Mockito.mock(BufferedReader.class).readLine()).thenThrow(IOException.class);
-//        assertThrows(RuntimeException.class,()->pointsCalculatorService.processFileToAthleteList(new File(inputFilePath),";"));
-//    }
+    @Test
+    public void checkNoOfFieldsInPlayer_IncorrectNoOfFields() {
+        StdConversion stdConversion = Mockito.mock(StdConversion.class);
+        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
+        String[] player = {"Jaan Lepp", "4.84", "10.12", "1.50", "68.44", "19.18", "30.85", "2.80", "33.88", "6:22.75"};
+        assertThrows(RuntimeException.class, () -> pointsCalculatorService.checkNoOfFieldsInPlayer(player));
+    }
+
+    @Test
+    public void creatAthleteObjectFromInput_SingleAthlete() throws ParseException {
+        StdConversion stdConversion = Mockito.mock(StdConversion.class);
+        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
+        String[] player = {"John Smith", "12.61", "5.00", "9.22", "1.50", "60.39", "16.43", "21.60", "2.60", "35.81", "5:25.72"};
+        Athlete athlete = new Athlete();
+        pointsCalculatorService.creatAthleteObjectFromInput(athlete, player);
+        assertEquals("John Smith", athlete.getName());
+    }
 
     @Test
     public void convertFromMetresToCentiMForJumpingSports_WithEmptyInputListTest() {
@@ -114,6 +129,16 @@ public class PointsCalculatorServiceTest {
     }
 
     @Test
+    public void convertUnitsBasedOnEventsType_WithSingleAthleteList() throws ParseException {
+        StdConversion stdConversion = new StdConversion();
+        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
+        String[] player = {"John Smith", "12.61", "5.00", "9.22", "1.50", "60.39", "16.43", "21.60", "2.60", "35.81", "5:25.72"};
+        List<String> athletePerformance = Arrays.stream(player).skip(1).collect(Collectors.toList());
+        LinkedHashMap<String, Double> resultMap = pointsCalculatorService.convertUnitsBasedOnEventsType(athletePerformance);
+        assertEquals(325.72, resultMap.get("1500 m"));
+    }
+
+    @Test
     public void calculateScoreBySportsType_WithEmptyInputListTest() {
         List<Athlete> list = new ArrayList<>();
         StdConversion stdConversion = Mockito.mock(StdConversion.class);
@@ -146,7 +171,27 @@ public class PointsCalculatorServiceTest {
     }
 
 
+    @Test
+    public void calculateAthleteScoreBasedOnPerformanceInSport_WithTrackSportsType() {
+        StdConversion stdConversion = Mockito.mock(StdConversion.class);
+        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
+        Sport sport = new Sport("100 m", SportsType.TRACK, SportsCategory.RUNNING, new Parameters(25.4347, 18, 1.81), Units.SECONDS);
+        LinkedHashMap<String, Double> athPerf = new LinkedHashMap<>();
+        athPerf.put("100 m", 12.61);
+        int actualValue = pointsCalculatorService.calculateAthleteScoreBasedOnPerformanceInSport(sport, athPerf);
+        assertEquals(536, actualValue);
+    }
 
+    @Test
+    public void calculateAthleteScoreBasedOnPerformanceInSport_WithFieldSportsType() {
+        StdConversion stdConversion = Mockito.mock(StdConversion.class);
+        PointsCalculatorService pointsCalculatorService = new PointsCalculatorService(stdConversion);
+        Sport sport = new Sport("Long jump", SportsType.FIELD, SportsCategory.JUMPING, new Parameters(0.14354, 220, 1.4), Units.METRES);
+        LinkedHashMap<String, Double> athPerf = new LinkedHashMap<>();
+        athPerf.put("Long jump", 500.0);
+        int actualValue = pointsCalculatorService.calculateAthleteScoreBasedOnPerformanceInSport(sport, athPerf);
+        assertEquals(382, actualValue);
+    }
 
     @Test
     public void sortAthletesByTotalScoreAndSetRank_WithEmptyInputListTest() {
@@ -157,9 +202,8 @@ public class PointsCalculatorServiceTest {
         assertThrows(IllegalArgumentException.class, () -> pointsCalculatorService.sortAthletesByTotalScoreAndSetRank(list));
     }
 
-
     @Test
-    public void sortAthletesByTotalScoreAndSetRank_Test() {
+    public void sortAthletesByTotalScoreAndSetRank_WithCorrectListOfAthletesTest() {
         List<Athlete> inputList = new ArrayList<>();
         Athlete athlete1 = new Athlete();
         athlete1.setName("John Cena");

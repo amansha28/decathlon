@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /*
-* A Service class to call methods to be called from Main class.
-*/
+ * A Service class to call methods to be called from Main class.
+ */
 public class AthletePointsCalculator {
 
     public static final Logger logger = Logger.getLogger(AthletePointsCalculator.class.getName());
@@ -25,10 +25,9 @@ public class AthletePointsCalculator {
     public void readAthletesFromFileAndCalculateScore(String inputFilePath, String splitBy, String resultPath) throws ParseException, IOException, JAXBException {
 
         logger.info("==== Starting AthletePointsCalculator : readAthletesFromFileAndCalculateScore ====");
-        File inputDataFile = new File(inputFilePath);
 
         // Step 1 : Read the input file containing Athletes performance in Decathlon.
-        List<Athlete> list = pointsCalculatorService.processFileToAthleteList(inputDataFile, splitBy);
+        List<Athlete> list = pointsCalculatorService.processFileToAthleteList(inputFilePath, splitBy);
 
         // Step 2 : For Sports in JUMPING category convert the readings from metres to centimeters.
         // As per requirements, scoring formula assumes that JUMPING sports units will be in centimeters.

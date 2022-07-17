@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<athletes>
+    <athlete>
+        <name>John Smith</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>12.61</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>500.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>9.22</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>60.39</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>16.43</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>21.6</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>260.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>35.81</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>325.72</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>4200</totalScore>
+        <rank>1</rank>
+    </athlete>
+    <athlete>
+        <name>Jaan Lepp</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.75</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>484.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>10.12</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>68.44</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.18</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>30.85</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>280.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.88</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>382.75</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3494</totalScore>
+        <rank>2</rank>
+    </athlete>
+    <athlete>
+        <name>Jane Doe</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.04</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>453.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>7.79</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>155.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>64.72</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>18.74</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.2</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>240.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>28.2</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>410.76</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3199</totalScore>
+        <rank>3</rank>
+    </athlete>
+    <athlete>
+        <name>Foo Bar</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.43</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3099</totalScore>
+        <rank>4-5-6</rank>
+    </athlete>
+    <athlete>
+        <name>Aman Sharma</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.43</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3099</totalScore>
+        <rank>4-5-6</rank>
+    </athlete>
+    <athlete>
+        <name>Neha Gupta</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.43</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3099</totalScore>
+        <rank>4-5-6</rank>
+    </athlete>
+    <athlete>
+        <name>Dhruv Gupta</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.45</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3096</totalScore>
+        <rank>7</rank>
+    </athlete>
+    <athlete>
+        <name>Ashish Sharma</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.5</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3089</totalScore>
+        <rank>8</rank>
+    </athlete>
+    <athlete>
+        <name>Arjun Sharma</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.53</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3084</totalScore>
+        <rank>9-10</rank>
+    </athlete>
+    <athlete>
+        <name>Ram Sharma</name>
+        <eventPerformance>
+            <entry>
+                <key>100 m</key>
+                <value>13.53</value>
+            </entry>
+            <entry>
+                <key>Long jump</key>
+                <value>435.0</value>
+            </entry>
+            <entry>
+                <key>Shot put</key>
+                <value>8.64</value>
+            </entry>
+            <entry>
+                <key>High jump</key>
+                <value>150.0</value>
+            </entry>
+            <entry>
+                <key>400 m</key>
+                <value>66.06</value>
+            </entry>
+            <entry>
+                <key>110 m hurdles</key>
+                <value>19.05</value>
+            </entry>
+            <entry>
+                <key>Discus throw</key>
+                <value>24.89</value>
+            </entry>
+            <entry>
+                <key>Pole vault</key>
+                <value>220.0</value>
+            </entry>
+            <entry>
+                <key>Javelin throw</key>
+                <value>33.48</value>
+            </entry>
+            <entry>
+                <key>1500 m</key>
+                <value>411.01</value>
+            </entry>
+        </eventPerformance>
+        <totalScore>3084</totalScore>
+        <rank>9-10</rank>
+    </athlete>
+</athletes>

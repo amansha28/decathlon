@@ -12,9 +12,9 @@ public class StdConversion {
     public static final Logger logger = Logger.getLogger(StdConversion.class.getName());
 
     /*
-    * Calculate the Base time stamp in milliseconds for : Jan 01 00:00:00 IST 1970
-    * This timestamp is used as the Base time for events with Units as MINUTESSECONDS (1500 m race)
-    */
+     * Calculate the Base time stamp in milliseconds for : Jan 01 00:00:00 IST 1970
+     * This timestamp is used as the Base time for events with Units as MINUTESSECONDS (1500 m race)
+     */
     public long getStartConvertedDateInSecs() throws ParseException {
         logger.info("==== Starting StdConversion : getStartConvertedDateInSecs ====");
         DateFormat simpleDateFormat;
