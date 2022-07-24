@@ -1,4 +1,4 @@
-package com.example.decathlon.util;
+package com.example.decathlon.util.validator;
 
 
 import com.example.decathlon.athlete.Athlete;
@@ -9,12 +9,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class ListValidatorTest {
+class ListValidatorTest {
 
     ListValidator listValidator = new ListValidator();
 
     @Test
-    public void validateTest_WithEmptyList() {
+    void validateTest_WithEmptyList() {
         List<Athlete> list = new ArrayList<>();
         assertThrows(IllegalArgumentException.class, () -> listValidator.validate(list));
     }

@@ -7,26 +7,25 @@ package com.example.decathlon.events.utils;
 
 public final class Parameters {
 
-    private final double A;
-    private final double B;
-    private final double C;
+    private final double constA;
+    private final double constB;
+    private final double constC;
 
-    public Parameters(double a, double b, double c) {
-        A = a;
-        B = b;
-        C = c;
+    public Parameters(double constA, double constB, double constC) {
+        this.constA = constA;
+        this.constB = constB;
+        this.constC = constC;
     }
 
-    public double getA() {
-        return A;
+    public double getConstA() {
+        return this.constA;
     }
 
-    public double getB() {
-        return B;
+    public double getConstB() {
+        return this.constB;
     }
 
-    public double getC() {
-        return C;
+    public double getConstC() {
+        return this.constC;
     }
-
 }

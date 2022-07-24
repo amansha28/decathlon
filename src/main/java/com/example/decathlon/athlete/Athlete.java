@@ -3,7 +3,7 @@ package com.example.decathlon.athlete;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 /*
  * Main Athlete class to store all information related to each athlete like name, performance in each sport, total-score and rank.
@@ -13,7 +13,7 @@ import java.util.LinkedHashMap;
 public class Athlete {
 
     private String name;
-    private LinkedHashMap<String, Double> eventPerformance;
+    private Map<String, Double> eventPerformance;
 
     private int totalScore;
     private String rank;
@@ -26,11 +26,11 @@ public class Athlete {
         this.name = name;
     }
 
-    public LinkedHashMap<String, Double> getEventPerformance() {
+    public Map<String, Double> getEventPerformance() {
         return eventPerformance;
     }
 
-    public void setEventPerformance(LinkedHashMap<String, Double> eventPerformance) {
+    public void setEventPerformance(Map<String, Double> eventPerformance) {
         this.eventPerformance = eventPerformance;
     }
 

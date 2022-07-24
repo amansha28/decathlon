@@ -30,22 +30,22 @@ public class Sport {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public SportsType getType() {
-        return type;
+        return this.type;
     }
 
     public SportsCategory getCategory() {
-        return category;
+        return this.category;
     }
 
     public Parameters getParameters() {
-        return parameters;
+        return this.parameters;
     }
 
     public Units getUnit() {
-        return unit;
+        return this.unit;
     }
 }

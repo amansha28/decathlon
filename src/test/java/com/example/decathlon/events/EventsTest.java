@@ -7,19 +7,20 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class EventsTest {
+class EventsTest {
     @Test
-    public void getSportsList_ListNotEmptyTest() {
-        Events events = new Events();
-        List<Sport> list = events.getSportsList();
+    void getSportsList_ListNotEmptyTest() {
+//        Events events = Events.getInstance();
+        List<Sport> list = Events.getSportsList();
         assertFalse(() -> list.isEmpty(), () -> "List of sports events is Empty");
     }
 
     @Test
-    public void getSportsList_ListEmptyTest() {
-        Events events = new Events();
-        List<Sport> list = events.getSportsList();
+    void getSportsList_ListEmptyTest() {
+//        Events events = Events.getInstance();
+        List<Sport> list = Events.getSportsList();
         list.clear();
         assertTrue(() -> list.isEmpty(), () -> "List of sports events is not Empty");
     }
+
 }

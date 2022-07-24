@@ -1,8 +1,12 @@
-package com.example.decathlon.util;
+package com.example.decathlon.util.validator;
 
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+/*
+ * Concrete class to validate File.
+ * */
 
 public class FileValidator implements Validator {
 

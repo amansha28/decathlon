@@ -6,14 +6,13 @@ import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class StdConversionTest {
+class StdConversionTest {
 
-    StdConversion stdConversion = new StdConversion();
-
-    @Test //19800000
-    public void getStartConvertedDateInSecs_CorrectTimeStampTest() throws ParseException {
+    @Test
+        //19800000
+    void getStartConvertedDateInSecs_CorrectTimeStampTest() throws ParseException {
         long expectedTimestamp = 19800000;
-        assertEquals(expectedTimestamp, stdConversion.getStartConvertedDateInSecs(), () -> "TimeStamp does not matches the expected");
+        assertEquals(expectedTimestamp, StdConversion.getStartConvertedDateInSecs(), () -> "TimeStamp does not matches the expected");
     }
 
 
